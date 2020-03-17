@@ -59,11 +59,11 @@ target_data = list(filter(lambda item: (item['station_id'] == 'C0A880' or item['
 
 # Print result
 
-n0 = 0
-n1 = 0
-n2 = 0
-n3 = 0
-n4 = 0
+n0 = 1
+n1 = 1
+n2 = 1
+n3 = 1
+n4 = 1
 SP_A880 = 0.0
 n_A880 = 0.0
 SP_F9A0 = 0.0
@@ -78,37 +78,42 @@ n_X260 = 0.0
 for i in range(len(target_data)):
    if (target_data[i]['station_id'] == 'C0A880') :
       if (target_data[i]['PRES'] == '-99.000' or target_data[i]['PRES'] == '-999.000') :
-         n0 = 1
+         
          target_data[i].popitem(target_data[i]['PRES'])
       else :
+         n0 = 0
          SP_A880 = SP_A880 + float(target_data[i]['PRES'])
          n_A880 = n_A880 + 1
    elif (target_data[i]['station_id'] == 'C0F9A0') :
       if (target_data[i]['PRES'] == '-99.000' or target_data[i]['PRES'] == '-999.000') :
-         n1 = 1
+         
          target_data[i].popitem(target_data[i]['PRES'])
       else :
+         n1 = 0
          SP_F9A0 = SP_F9A0 + float(target_data[i]['PRES'])
          n_F9A0 = n_F9A0 + 1
    elif (target_data[i]['station_id'] == 'C0G640') :
       if (target_data[i]['PRES'] == '-99.000' or target_data[i]['PRES'] == '-999.000') :
-         n2 = 1
+         
          target_data[i].popitem(target_data[i]['PRES'])
       else :
+         n2 = 0
          SP_G640 = SP_G640 + float(target_data[i]['PRES'])
          n_G640 = n_G640 + 1
    elif (target_data[i]['station_id'] == 'C0R190') :
       if (target_data[i]['PRES'] == '-99.000' or target_data[i]['PRES'] == '-999.000') :
-         n3 = 1
+         
          target_data[i].popitem(target_data[i]['PRES'])
       else :
+         n3 = 0
          SP_R190 = SP_R190 + float(target_data[i]['PRES'])
          n_R190 = n_R190 + 1
    elif (target_data[i]['station_id'] == 'C0X260') :
       if (target_data[i]['PRES'] == '-99.000' or target_data[i]['PRES'] == '-999.000') :
-         n4 = 1
+         
          target_data[i].popitem(target_data[i]['PRES'])
       else :
+         n4 = 0
          SP_X260 = SP_X260 + float(target_data[i]['PRES'])
          n_X260 = n_X260 + 1
 
